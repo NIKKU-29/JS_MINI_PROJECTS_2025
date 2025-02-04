@@ -5,10 +5,6 @@ console.log(typeof(name));
 console.log(bankBalance.toString());
 console.log(typeof(bankBalance));
 
-
-
-
-
 //how to use a recursive function
 let fun = function() {
     return Math.random();
