@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f0f1a, #1a0033, #330040);
+    background-size: 600% 600%;
+    animation: neonflow 15s ease infinite;
+    color: #ffffff;
+  }
+
+  @keyframes neonflow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #00ffe5;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    margin-bottom: 30px;
+  }
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    padding: 16px;
+  }
+
+  .cell {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .cell:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.05);
+  }
+
+  .cell.x {
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  }
+
+  .cell.o {
+    color: #ff00d4;
+    text-shadow: 0 0 10px #ff00d4, 0 0 20px #ff00d4;
+  }
+
+  .NOTE {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #00ffe5;
+    text-shadow: 0 0 6px #0ff;
+  }
+
+  button {
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid #00ffe5;
+    color: #00ffe5;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: #00ffe5;
+    color: #000;
+    box-shadow: 0 0 12px #00ffe5;
+  }
