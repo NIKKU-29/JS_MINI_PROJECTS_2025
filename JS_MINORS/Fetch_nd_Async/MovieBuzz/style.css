@@ -1,0 +1,486 @@
+:root {
+    --primary: #032541;
+    --secondary: #01b4e4;
+    --text: #333;
+    --light-text: #777;
+    --background: #f7f9fc;
+    --card-bg: #fff;
+    --rating-low: #f44336;
+    --rating-medium: #ff9800;
+    --rating-high: #4caf50;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+  }
+  
+  /* Reset and base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Searcher section */
+  .seracher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #e0f7fa; /* light cyan */
+    position: relative;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2vw;
+  }
+  
+  #movieSearch {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px #00acc1;
+    transition: box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease;
+  }
+  
+  #movieSearch:focus {
+    box-shadow: 0 0 0 3px #00838f;
+    background-color: #f0f0f0;
+  }
+  
+  #movieSearch::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* List container */
+  .LIST {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    background-color: #E5EFF1;
+    padding: 2vw;
+    width: 100%;
+    /* Remove padding: auto; since auto isn't valid – you may remove this line or use your own spacing */
+  }
+  
+  /* Movie Card */
+  .movie-card {
+    width: 32%;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  }
+  
+  /* On hover, elevate the card slightly with a deeper shadow */
+  .movie-card:hover {
+    transform: translateY(0);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Fade in animation for movie cards */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Card Header & Poster */
+  .card-header {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card-header:hover .poster-image {
+    transform: scale(1.05);
+  }
+  
+  /* Overlay styles for text and additional details */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+    /* Animate in the overlay using a slight delay */
+    animation: overlaySlide 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes overlaySlide {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Title block and rating */
+  .title-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .rating-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 15px;
+    border: 3px solid;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  /* Rating colors */
+  .low-rating {
+    color: var(--rating-low);
+    border-color: var(--rating-low);
+  }
+  
+  /* Title and year in overlay */
+  .title-year {
+    flex: 1;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .year {
+    font-size: 18px;
+    opacity: 0.8;
+  }
+  
+  /* Meta Information */
+  .meta-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  /* Genre Tags Animation */
+  .genre-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    backdrop-filter: blur(5px);
+    animation: slideIn 0.5s ease forwards;
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  
+  .tag:nth-child(1) { animation-delay: 0.1s; }
+  .tag:nth-child(2) { animation-delay: 0.2s; }
+  .tag:nth-child(3) { animation-delay: 0.3s; }
+  .tag:nth-child(4) { animation-delay: 0.4s; }
+  .tag:nth-child(5) { animation-delay: 0.5s; }
+  .tag:nth-child(6) { animation-delay: 0.6s; }
+  
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Trailer Button */
+  .trailer-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--secondary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    gap: 8px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 4px 8px rgba(1, 180, 228, 0.3);
+  }
+  
+  .trailer-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(1, 180, 228, 0.5);
+  }
+  
+  /* Card Body and Details */
+  .card-body {
+    padding: 25px;
+  }
+  
+  .description {
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+  }
+  
+  /* Details Grid */
+  .details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-delay: 0.5s;
+  }
+  
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+  }
+  
+  .detail-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--light-text);
+    margin-bottom: 5px;
+  }
+  
+  .detail-value {
+    font-weight: 500;
+    color: var(--text);
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f3f8;
+    color: var(--primary);
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+  }
+  
+  .action-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  /* Interests Section */
+  .interests-section {
+    margin-top: 25px;
+  }
+  
+  .interests-title {
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 10px;
+  }
+  
+  .interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .interest-tag {
+    background-color: #f0f3f8;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--primary);
+    animation: scaleIn 0.3s ease forwards;
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  .interest-tag:nth-child(1) { animation-delay: 0.6s; }
+  .interest-tag:nth-child(2) { animation-delay: 0.7s; }
+  .interest-tag:nth-child(3) { animation-delay: 0.8s; }
+  .interest-tag:nth-child(4) { animation-delay: 0.9s; }
+  .interest-tag:nth-child(5) { animation-delay: 1.0s; }
+  .interest-tag:nth-child(6) { animation-delay: 1.1s; }
+  
+  @keyframes scaleIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* IMDb Link */
+  .imdb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: color 0.2s ease;
+  }
+  
+  .imdb-link:hover {
+    color: var(--secondary);
+  }
+  
+  /* Budget Section */
+  .budget-section {
+    margin-top: 25px;
+    background-color: #f0f3f8;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .budget-bars {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .bar-container {
+    flex: 1;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 4px;
+    transition: width 1s ease-out;
+  }
+  
+  .bar-budget {
+    background-color: var(--primary);
+  }
+  
+  .bar-gross {
+    background-color: var(--secondary);
+  }
+  
+  .bar-label {
+    font-size: 12px;
+    font-weight: 500;
+    width: 80px;
+  }
+  
+  .bar-value {
+    font-size: 12px;
+    width: 100px;
+    text-align: right;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .card-header { height: 300px; }
+    h1 { font-size: 24px; }
+    .meta-info { flex-wrap: wrap; }
+    .details-grid { flex-direction: column; }
+    .movie-card { width: 48%; }
+  }
+  
+  @media (max-width: 480px) {
+    .card-header { height: 250px; }
+    h1 { font-size: 20px; }
+    .rating-circle {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+    .details-grid { flex-direction: column; }
+    .movie-card { width: 100%; }
+  }
+  

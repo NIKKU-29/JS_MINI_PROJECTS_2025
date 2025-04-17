@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG COLOR CHANGE QUESTION</title>
+</head>
+
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="BG">
+        No color
+    </div>
+</body>
+<script>
+    const colors = ['blue' , 'green' , 'pink' , 'red' , 'cyan' , 'yellow'];
+
+    const RandomColorIdx  = () => Math.floor(Math.random() * 6);
+    
+    const changer = () =>{
+        const idx = RandomColorIdx();
+        document.querySelector(`body`).style.backgroundColor = colors[idx];
+        document.getElementById(`BG`).innerHTML = `THIS COLOR IS ${colors[idx]} <<<< TRY HOVER ME`;
+        document.getElementById(`BG`).style.color = `black`;
+    };
+    
+    let action;
+    const startChanger = () => {
+    action = setInterval(changer, 1000);
+    };
+
+    // Start changing colors on page load
+    
+    const stopper = () =>
+    {
+        document.getElementById(`BG`).innerHTML = `LET ME CHANGE COLOR GOOO AWAY!!!!!`;
+        clearInterval(action);
+    } 
+
+    document.getElementById(`BG`).addEventListener(`mouseenter`, stopper);
+    document.getElementById(`BG`).addEventListener(`mouseleave`, startChanger);
+    
+    startChanger();
+    
+    
+
+</script>
+</html>

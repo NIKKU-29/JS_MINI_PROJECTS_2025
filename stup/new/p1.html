@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling & Capturing</title>
+<style>
+    ul {
+        height: auto;
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    li {
+        list-style: none;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    li img {
+        height: 6vw;
+    }
+</style>
+</head>
+<body>
+
+    <section>
+        <ul id="list-container">
+            <li id="one"> <img src="files/1.png" alt="error"> Click to Remove</li>
+            <li id="two"> <img src="files/2.png" alt="error"> Click to Remove</li>
+            <li id="three"> <img src="files/3.jpg" alt="error"> Click to Remove</li>
+            <li id="four"> <img src="files/4.jpg" alt="error"> Click to Remove</li>
+            <li id="five"> <img src="files/5.jpg" alt="error"> Click to Remove</li>
+            <li id="six"> <img src="files/6.jpg" alt="error"> Click to Remove</li>
+        </ul>
+    </section>
+    
+</body>
+
+<script>
+
+// ✅ Default Bubbling Example (Child to Parent)
+const listItems = document.querySelectorAll('li');
+
+listItems.forEach((li) => {
+    li.addEventListener('click', (event) => {
+        console.log("LI Clicked! Bubbling Phase");
+        li.remove();  // Removes clicked li
+        // event.stopPropagation();  // Prevents bubbling to parent
+    });
+});
+
+
+//capturing
+// const parent= document.getElementById('list-container')
+//     parent.addEventListener('click',(e) =>{
+//         console.log("ul was clicked");
+//     },true); <--------------------------------------------------------Because of true
+
+
+
+
+</script>
+</html>

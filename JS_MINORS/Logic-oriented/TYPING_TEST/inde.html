@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Tester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Tester</h1>
+        
+        <div class="text-container">
+            <p class="quote-display">Press "Start" to begin the test.</p>
+            <p class="ghost-text"></p>
+        </div>
+        
+        <input type="text" class="input-field" disabled placeholder="Type here when the test starts..." />
+        
+        <div class="stats">
+            <p class="timer">Time: 30s</p>
+            <p class="result"></p>
+            <p class="accuracy"></p>
+        </div>
+        
+        <button class="start-btn">Start Test</button>
+        
+        <div class="instructions">
+            <p>Start typing to begin the test automatically, or press the Start button.</p>
+            <p>Press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to restart the test at any time.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+    "id": "tt1213644",
+    "url": "https://www.imdb.com/title/tt1213644/",
+    "primaryTitle": "Disaster Movie",
+    "originalTitle": "Disaster Movie",
+    "type": "movie",
+    "description": "Over the course of one evening, an unsuspecting group of twenty-somethings find themselves bombarded by a series of natural disasters and catastrophic events.",
+    "primaryImage": "https://m.media-amazon.com/images/M/MV5BMTIzMDQyNDgwNl5BMl5BanBnXkFtZTcwMDA0MTc3MQ@@._V1_.jpg",
+    "trailer": "https://www.youtube.com/watch?v=tihG_2BSUqg",
+    "contentRating": "PG-13",
+    "startYear": 2008,
+    "endYear": null,
+    "releaseDate": "2008-08-29",
+    "interests": [
+      "Disaster",
+      "Parody",
+      "Raunchy Comedy",
+      "Superhero",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "countriesOfOrigin": [
+      "US"
+    ],
+    "externalLinks": null,
+    "spokenLanguages": [
+      "en"
+    ],
+    "filmingLocations": [
+      "Albuquerque, New Mexico, USA"
+    ],
+    "productionCompanies": [
+      {
+        "id": "co0006881",
+        "name": "Lionsgate"
+      },
+      {
+        "id": "co0209305",
+        "name": "Grosvenor Park Media"
+      },
+      {
+        "id": "co0261040",
+        "name": "3 in the Box"
+      }
+    ],
+    "budget": 20000000,
+    "grossWorldwide": 34816824,
+    "genres": [
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "isAdult": false,
+    "runtimeMinutes": 87,
+    "averageRating": 1.9,
+    "numVotes": 96292,
+    "metascore": 15
+  }

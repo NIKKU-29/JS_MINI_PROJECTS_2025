@@ -1,0 +1,123 @@
+body {
+    background-color: #1e1e2e; /* Dark Purple-Blue */
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    color: #ffcc66; /* Soft Orange */
+    text-align: center;
+    font-size: 2rem;
+}
+
+.adder {
+    height: 10vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: #5e81ac; /* Blue */
+    border-radius: 2vw;
+    padding: 1vw;
+}
+
+.Task {
+    width: 80%;
+    height: 2.5vw;
+    border: none;
+    border-bottom: 2px solid #88c0d0; /* Light Blue */
+    color: #2e3440; /* Dark Gray */
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    background-color: #eceff4; /* Off White */
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+}
+
+#add {
+    height: 3vw;
+    border: none;
+    background-color: #ffb86c; /* Warm Orange */
+    color: #2e3440;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    width: 15%;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add:hover {
+    background-color: #ffaf5f;
+}
+
+.show {
+    height: auto;
+    justify-content: center;
+    align-items: left;
+    margin-top: 2rem;
+    border-radius: 2vw;
+    flex-direction: column;
+}
+
+li {
+    padding: 1vw 1vw;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2vw;
+    border: 2px solid #8fbcbb; /* Soft Cyan */
+    background-color: #4c566a; /* Dark Gray-Blue */
+    color: #eceff4;
+    margin-bottom: 1vw;
+}
+
+.remove-btn,
+.edit-btn,
+.save-btn {
+    padding: 0.5vw 1vw;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn {
+    background-color: #bf616a; /* Red */
+    color: #ffffff;
+}
+
+.remove-btn:hover {
+    background-color: #d08770;
+}
+
+.edit-btn {
+    background-color: #a3be8c; /* Green */
+    color: #2e3440;
+}
+
+.edit-btn:hover {
+    background-color: #b5d19a;
+}
+
+.save-btn {
+    background-color: #ebcb8b; /* Yellow-Gold */
+    color: #2e3440;
+}
+
+.save-btn:hover {
+    background-color: #f0d8a5;
+}
+
+.edit-input {
+    width: 70%;
+    height: 2vw;
+    border: none;
+    border-bottom: 2px solid #88c0d0; /* Light Blue */
+    color: #2e3440;
+    font-size: 1.2rem;
+    background-color: #eceff4; /* Off White */
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+}

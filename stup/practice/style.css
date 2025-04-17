@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+.card{
+    width: 90%;
+    max-width: 470px;
+    min-height: 500px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+@keyframes sharpFromBlur {
+    from {
+        filter: blur(10px);
+        transform: translateX(-20px);
+    }
+    to {
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#search-btn {
+    background-color: aliceblue;
+    cursor: pointer;
+    min-width: 40px;
+    min-height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    animation: sharpFromBlur 0.3s ease-in;
+}
+
+#search-btn img{
+    width: 20px;
+    height: 20px;
+}
+
+input{
+    width: 100%;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    animation: sharpFromBlur 0.3s ease-in;
+}
+
+.weather{
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+.weather-icon{
+    width: 60%;
+    height: 60%;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+.temperature{
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 500;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+.city{
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 500;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+.humidity img{
+    width: 70px;
+    height: 70px;
+}
+
+.wind img{
+    width: 70px;
+    height: 70px;
+}
+
+.humidity, .wind{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    animation: sharpFromBlur 0.5s ease-in;
+}
+
+#humidity-value, #wind-value{
+    font-size: 25px;
+    font-weight: 500;
+    animation: sharpFromBlur 0.5s ease-in;
+}

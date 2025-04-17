@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    section{
+        width: auto;
+        height: 50vw;
+        display: block;
+        text-align: center;
+        background-color: #212121;
+        color: whitesmoke;
+    }
+</style>
+<body>
+    
+    <section id="center">
+        PRESS THE KEY U WANT TO DETECT
+    </section>
+</body>
+
+<script>
+    const insert = document.getElementById(`center`);
+
+    window.addEventListener(`keydown` , (e) => {
+        insert.innerHTML= `<table>
+        <tr>
+            <th>KEY</th>
+            <th>KEYCODE</th>
+            <th>CODE</th>
+        </tr>
+        <tr>
+            <td>${e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+        </table>`;
+    });
+
+</script>
+</html>
